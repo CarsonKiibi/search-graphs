@@ -60,7 +60,7 @@ def dijkstra(graph, start, end):
             distance = current_distance + calculate_distance(graph, current_vertex, neighbor)
             
             if distance < distances[neighbor]:
-                time.sleep(2.5)
+                time.sleep(0.5)
                 distances[neighbor] = distance
                 rounded = round(distance, 2)
                 draw_line(graph[current_vertex][neighbor], graph[neighbor][current_vertex], visited_color)
@@ -77,6 +77,7 @@ def calculate_distance(graph, start, end):
 
 def draw_line(start, end, color):
     pygame.draw.line(screen, color, ((start.x * 20) + 20, (start.y * 20) + 20), ((end.x * 20) + 20, (end.y * 20) + 20), 5)
+
 def label_line(start, end, label, color):
     midpoint = Point(round((start.x + end.x) / 2, 1), round((start.y + end.y) / 2, 1))
     text_surface = my_font.render(label, False, color)
@@ -89,7 +90,6 @@ def paint(graph, start, end):
     for i in graph:
         for j in graph[i]:
             draw_line(graph[i][j], graph[j][i], unvisited_color)
-
     
     for node in graph:
         for nestedNode in graph:
