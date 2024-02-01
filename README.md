@@ -5,6 +5,8 @@ Algorithm info: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 ## Setup
 
 Make sure python 3 is installed.
+
+Then install the requirements.
 ```
 pip install -r requirements.text
 ```
